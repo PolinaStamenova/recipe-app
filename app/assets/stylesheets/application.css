@@ -14,6 +14,12 @@
  *= require_self
  */
 
-ul {
-  text-decoration: none;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
