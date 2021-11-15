@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     authorize! :destroy, @recipe
     @recipe.destroy
     flash[:notice] = 'Recipe successfully deleted!'
-    redirect_to recipes_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

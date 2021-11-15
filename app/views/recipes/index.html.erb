@@ -1,5 +1,3 @@
 <% @recipes.each do |recipe| %>
-  <%= link_to recipe_path(recipe.id) do %>
-    <%= render partial: 'recipe', object: recipe %>
-  <% end %>
+  <%= render partial: 'recipe', object: recipe %>
 <% end %>
