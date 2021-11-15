@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root 'users#index'
-  # root new_user_session_path
+  root 'foods#index'
+  resources :foods, only: [:index, :create, :destroy]
 end
