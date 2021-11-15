@@ -3,9 +3,7 @@ class FoodsController < ApplicationController
     @foods = Food.all
   end
 
-  def create
-  end
+  def create; end
 
-  def destroy
-  end
+  def destroy; end
 end

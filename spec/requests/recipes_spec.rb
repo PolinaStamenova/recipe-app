@@ -1,25 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe "Recipes", type: :request do
-  describe "GET /index" do
-    it "returns http success" do
-      get "/recipes/index"
-      expect(response).to have_http_status(:success)
+RSpec.describe 'Recipes', type: :request do
+  include Devise::Test::IntegrationHelpers
+
+  let(:user) { User.create(name: 'Akasha', email: 'akasha@mail.com', password: 'password') }
+
+  describe 'GET /index' do
+    before do
+      sign_in user
+      get recipes_path
+    end
+
+    it 'returns http ok' do
+      expect(response).to have_http_status(:ok)
+    end
+    it "renders 'index' template" do
+      expect(response).to render_template('index')
     end
   end
-
-  describe "GET /create" do
-    it "returns http success" do
-      get "/recipes/create"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/recipes/destroy"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
