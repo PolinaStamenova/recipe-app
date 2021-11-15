@@ -14,8 +14,13 @@ RSpec.describe 'Recipes', type: :request do
     it 'returns http ok' do
       expect(response).to have_http_status(:ok)
     end
+
     it "renders 'index' template" do
       expect(response).to render_template('index')
+    end
+
+    it 'should include correct placeholder' do
+      expect(response.body).to include('Find me in app/views/recipes/index.html.erb')
     end
   end
 end

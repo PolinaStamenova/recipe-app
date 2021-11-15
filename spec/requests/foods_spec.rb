@@ -17,5 +17,9 @@ RSpec.describe 'Foods', type: :request do
     it "renders 'index' template" do
       expect(response).to render_template('index')
     end
+
+    it 'should include correct placeholder' do
+      expect(response.body).to include('Find me in app/views/foods/index.html.erb')
+    end
   end
 end
