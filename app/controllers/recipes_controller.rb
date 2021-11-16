@@ -3,12 +3,17 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  
+  def new
+    @recipe = Recipe.new
+  end
+  
   def show
     @recipe = Recipe.find(params[:id])
   end
 
-  def new
-    @recipe = Recipe.new
+  def public_recipes
+    @recipes = Recipe.where({ public: true }).order(created_at: :desc)
   end
 
   def create
