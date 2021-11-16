@@ -38,6 +38,10 @@ a {
   margin-left: 0.5rem;
 }
 
+.btn {
+  padding: 0.4rem;
+}
+
 .back-btn {
   padding: 0.4rem;
   min-width: 8rem;
@@ -103,4 +107,8 @@ a {
 
 .nav-active-link {
   color: blue;
+}
+
+.remove-recipe-btn {
+  padding: 0.2rem 0.5rem;
 }

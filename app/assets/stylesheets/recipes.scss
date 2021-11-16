@@ -1,3 +1,44 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.recipe-container {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-data {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+  border: 1px solid black;
+
+  p {
+    font-size: 18px;
+  }
+}
+
+.recipe-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.recipe-secondary {
+  word-wrap: break-word;
+}
+
+.create-recipe-form {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-recipe-btn {
+  font-size: 24px;
+  margin: 1rem;
+}
