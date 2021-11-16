@@ -2,11 +2,11 @@ class RecipesController < ApplicationController
   def index
     @recipes = current_user.recipes
   end
-  
+
   def new
     @recipe = Recipe.new
   end
-  
+
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -17,9 +17,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    if @recipe.save
-      flash[:notice] = 'Recipe successfully added!'
-    end
+    flash[:notice] = 'Recipe successfully added!' if @recipe.save
     redirect_to recipes_path
   end
 
