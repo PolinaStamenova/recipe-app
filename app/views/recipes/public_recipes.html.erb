@@ -1,7 +1,7 @@
 <% @recipes.each do |recipe| %>
   <div class="recipe-public-data flex-row">
     <div class="recipe-public-left flex-col">
-      <p><%= recipe.name %></p>
+      <%= link_to recipe.name, recipe_path(recipe.id) %>
       <p>By: <%= recipe.user.name %></p>
     </div>
     <div class="recipe-public-right flex-col">

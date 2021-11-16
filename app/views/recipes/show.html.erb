@@ -15,7 +15,7 @@
 </div>
 
 <div class="recipe-actions flex-row">
-  <%= button_to "Add ingredient" %>
+  <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) %>
 </div>
 
 <div class="recipe-ingredients flex-row">
