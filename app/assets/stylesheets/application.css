@@ -34,6 +34,10 @@ a {
   color: black;
 }
 
+.flash-msg {
+  margin-left: 0.5rem;
+}
+
 .back-btn {
   padding: 0.4rem;
   min-width: 8rem;
@@ -46,4 +50,57 @@ a {
 .flex-col {
   display: flex;
   flex-direction: column;
+}
+
+.nav-top {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: antiquewhite;
+}
+
+.sign-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.5rem;
+}
+
+.sign-nav-ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.role {
+  min-width: 60px;
+  text-align: end;
+  font-size: 20px;
+  color: darkcyan;
+}
+
+.sign-nav-list {
+  font-size: 18px;
+}
+
+.nav-bottom {
+  background-color: pink;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 18px;
+  padding: 0.4rem;
+}
+
+.nav-list {
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: gainsboro;
+}
+
+.nav-active-link {
+  color: blue;
 }
