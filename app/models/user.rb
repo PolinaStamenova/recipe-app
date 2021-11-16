@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-
   private
 
   def set_default_role
