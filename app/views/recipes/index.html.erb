@@ -1,2 +1,4 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<%= link_to "Create a recipe", new_recipe_path %>
+<% @recipes.each do |recipe| %>
+  <%= render partial: 'recipe', object: recipe %>
+<% end %>
