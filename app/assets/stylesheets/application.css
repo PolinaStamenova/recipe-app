@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
  * {
    padding: 0;
    margin: 0;
@@ -23,6 +24,30 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.back-btn {
+  padding: 0.4rem;
+  min-width: 8rem;
+}
+
+.delete-btn {
+  padding: 0.2rem;
+
 }
 
 .flex-col {

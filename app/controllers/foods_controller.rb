@@ -3,13 +3,18 @@ class FoodsController < ApplicationController
     @foods = Food.all
   end
 
+  def new
+    @food = Food.new
+  end
+
   def create
     @food = current_user.foods.build(food_params)
     if @food.save
       flash[:notice] = 'Food successfully added!'
       redirect_to foods_path
     else
-      render :index
+      flash[:notice] = 'Food was not added, please fill all the fileds!'
+      render :new
     end
   end
 
@@ -18,7 +23,7 @@ class FoodsController < ApplicationController
     authorize! :destroy, @food
     @food.destroy
     flash[:notice] = 'Food susseccfully deleted!'
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: foods_path)
   end
 
   private
