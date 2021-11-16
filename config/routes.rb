@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'foods#index'
-  resources :foods, only: [:index, :create, :destroy]
+  resources :foods, only: [:index, :create, :destroy, :new]
 
   resources :recipes, only: [:index, :show, :create, :destroy]
 end

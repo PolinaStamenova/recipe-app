@@ -1,3 +1,50 @@
 // Place all the styles related to the Foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.food-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .add-food-btn {
+    margin: auto 0 auto auto;
+    display: block;
+  }
+
+  table {
+    background-color: #ccc;
+  }
+
+  td {
+    background-color: palevioletred;
+    padding: 0.3rem;
+  }
+
+  th {
+    padding: 0.3rem;
+    background-color: yellow;
+  }
+}
+
+.add-food-form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  label {
+    color: red;
+    display: flex;
+    padding: 0.5rem 0 0.2rem 0;
+  }
+
+  input {
+    padding: 0.3rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.3rem;
+  }
+}
+
+.add-food-btn {
+  color: green;
+}
