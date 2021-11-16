@@ -3,12 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .food-container {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 600px;
+  margin: 2rem auto auto auto;
 
   .add-food-btn {
-    margin: auto 0 auto auto;
+    margin-bottom: 1rem;
     display: block;
   }
 
@@ -17,13 +16,13 @@
   }
 
   td {
-    background-color: palevioletred;
+    background-color: beige;
     padding: 0.3rem;
   }
 
   th {
     padding: 0.3rem;
-    background-color: yellow;
+    background-color: lightgrey;
   }
 }
 
@@ -43,8 +42,4 @@
     border: 0.1rem solid #ccc;
     border-radius: 0.3rem;
   }
-}
-
-.add-food-btn {
-  color: green;
 }

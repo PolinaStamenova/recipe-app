@@ -57,30 +57,31 @@ a {
 }
 
 .nav-top {
-  margin-top: 1rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  background-color: antiquewhite;
+  background-color: lightgray;
 }
 
 .sign-nav {
   display: flex;
   gap: 0.5rem;
   align-items: baseline;
-  padding: 0.5rem;
 }
 
 .sign-nav-ul {
   display: flex;
   gap: 1rem;
+  color: black;
+  opacity: 0.5;
 }
 
 .role {
   min-width: 60px;
   text-align: end;
   font-size: 20px;
-  color: darkcyan;
+  color: black;
 }
 
 .sign-nav-list {
@@ -88,7 +89,7 @@ a {
 }
 
 .nav-bottom {
-  background-color: pink;
+  background-color: antiquewhite;
 }
 
 .nav-ul {
@@ -106,7 +107,8 @@ a {
 }
 
 .nav-active-link {
-  color: blue;
+  color: black;
+  opacity: 0.5;
 }
 
 .remove-recipe-btn {
