@@ -13,6 +13,10 @@
     <div>
       <%= form.text_area :description, size: "70x30", required: true, placeholder: "Description", value: nil %>
     </div>
+    <div>
+      <%= form.check_box :public %>
+      <%= form.label :public %>
+    </div>
     <div class = "new-btn">
       <%= form.submit %>
     </div>
