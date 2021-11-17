@@ -5,12 +5,20 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @recipe_food = current_user.recipes.recipe_foods.build(recipe_food_params)
-    flash[:notice] = 'Recipe food successfully added!' if @recipe_food.save
-    redirect_to recipe_path(recipe_food_params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_foods = @recipe.recipe_foods.create(recipe_foods_params.merge(recipe_id: @recipe.id))
+    if @recipe_foods.save
+      flash[:notice] = 'Recipe food successfully added!'
+      redirect_back(fallback_location: root_path)
+    else
+      flash[:notice] = 'Food was not added!'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
-  def recipe_food_params
-    params.fetch(:recipe_food).permit(:quantity, :food_id, :recipe_id)
+  private
+
+  def recipe_foods_params
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 end
