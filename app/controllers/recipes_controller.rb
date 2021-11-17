@@ -15,6 +15,11 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where({ public: true }).order(created_at: :desc).includes(:user)
   end
 
+  def generate_shopping_list
+    @recipe = Recipe.find(id: params[:id])
+    binding.pry
+  end
+
   def create
     @recipe = current_user.recipes.build(recipe_params)
     flash[:notice] = 'Recipe successfully added!' if @recipe.save
