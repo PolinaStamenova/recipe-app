@@ -12,6 +12,9 @@
     </div>
     <div class="recipe-info flex-col">
       Public: <%= @recipe.public %>
+      <p>Public:</p>
+     <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+
     </div>
   </div>
 
@@ -19,16 +22,38 @@
     <button class = "btn ">
       Generate shopping list
     </button>
-    <button class = "btn ">
-      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn" %>
-    </button>
+    <% if can? :update, @recipe %>
+      <button class = "btn ">
+        <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn" %>
+      </button>
+    <% end %>
   </div>
 
   <div class = "hidden-text">
   </div>
 
-  <div class="recipe-ingredients flex-row">
-  </div>
-
+    <table class="recipe-ingredients flex-row">
+      <% if @recipe.recipe_foods.any? %>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+        <% end %>
+        <% @recipe.recipe_foods.each do |food| %>
+          <tr>
+            <td><%= food.food.name%></td>
+            <td><%= food.quantity%> <%= food.food.measurement_units%></td>
+            <td><%= number_to_currency(food.food.price*food.quantity)%></td>
+            <td class = "recipe-food-buttons">
+              <% if can? :update,  @recipe %>
+                <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id)%>
+                <%= link_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), method: :delete, data: { confirm: "Are you sure you want to remove the food?" } %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+    </table>
 </div>
 
