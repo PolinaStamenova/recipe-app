@@ -7,13 +7,10 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :destroy, Food do |food|
-        food.user.id == user.id
-      end
+      can :manage, Food, user: user
 
-      can :destroy, Recipe do |recipe|
-        recipe.user.id == user.id
-      end
+      can :manage, Recipe, user: user
+
     end
   end
 end
