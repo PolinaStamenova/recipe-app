@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+.profiler-result {
+  display: none;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

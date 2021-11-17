@@ -1,12 +1,14 @@
 <% @recipes.each do |recipe| %>
+<%= link_to recipe_path(recipe.id) do %>
   <div class="recipe-public-data flex-row">
     <div class="recipe-public-left flex-col">
-      <%= link_to recipe.name, recipe_path(recipe.id) %>
-      <p>By: <%= recipe.user.name %></p>
+     <p> <%= recipe.name %></p>
+      <small class = "recipe-by-name">By: <%= recipe.user.name %></small>
     </div>
     <div class="recipe-public-right flex-col">
       <p>Total food items:</p>
       <p>Total price</p>
     </div>
   </div>
+  <% end %>
 <% end %>
