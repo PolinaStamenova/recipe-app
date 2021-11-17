@@ -4,7 +4,7 @@
       <%= f.text_field :name, autofocus: true, placeholder: 'Bananas'%>
 
       <%= f.label :measurment_units %>
-      <%= f.text_field :measurmnet_units, placeholder: 'grams'%>
+      <%= f.text_field :measurement_units, placeholder: 'grams'%>
 
       <%= f.label :price %>
       <%= f.number_field :price, placeholder: '20$' %>
@@ -12,6 +12,14 @@
       <%= f.submit 'Add food', class: 'add-food-btn' %>
     </p>
   <% end %>
+
+<ul class = "food-form-errors">
+      <%@food.errors.full_messages.each do |msg|%>
+        <li class = "food-form-errors-list">
+          <%= msg%>
+        </li>
+      <%end%>
+</ul>
 
   <div class = "back-btn-holder">
     <button class = "back-btn">
