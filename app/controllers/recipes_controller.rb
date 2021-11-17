@@ -8,11 +8,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.where(id: params[:id]).includes(:recipe_foods).take
   end
 
   def public_recipes
-    @recipes = Recipe.where({ public: true }).order(created_at: :desc)
+    @recipes = Recipe.where({ public: true }).order(created_at: :desc).includes(:user)
   end
 
   def create
