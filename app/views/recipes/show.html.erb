@@ -11,17 +11,17 @@
       <p><%= @recipe.description %></p>
     </div>
     <div class="recipe-info flex-col">
-      Public: <%= @recipe.public %>
-      <p>Public:</p>
-     <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+      <%# Public: <%= @recipe.public %>
 
+      <div class="custom-control custom-switch">
+        <input name="toggled" value = "false" type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">Public</label>
+      </div>
     </div>
   </div>
 
   <div class="recipe-actions">
-    <button class = "btn ">
-      Generate shopping list
-    </button>
+    <%= link_to 'Generate shopping list', generate_shopping_list_path, class: "btn" %>
     <% if can? :update, @recipe %>
       <button class = "btn ">
         <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn" %>

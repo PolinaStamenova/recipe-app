@@ -5,8 +5,10 @@
       <small class = "recipe-by-name">By: <%= recipe.user.name %></small>
     </div>
     <div class="recipe-public-right flex-col">
-      <p>Total food items:</p>
-      <p>Total price</p>
+      <p>Total food items: <%= recipe.recipe_foods.size%></p>
+      <p>Total price: <%= sum_of_food_price(recipe.recipe_foods)%></p>
+
+
     </div>
   </div>
 <% end %>

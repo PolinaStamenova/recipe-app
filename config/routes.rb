@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
 
   get 'public_recipes', to: 'recipes#public_recipes'
+  get 'generate_shopping_list', to: 'recipes#generate_shopping_list'
+
 end
