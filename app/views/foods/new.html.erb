@@ -7,7 +7,7 @@
       <%= f.text_field :measurement_units, placeholder: 'grams'%>
 
       <%= f.label :price %>
-      <%= f.number_field :price, placeholder: '20$' %>
+      <%= f.number_field :price, placeholder: '20$', min: 0 %>
     <p>
       <%= f.submit 'Add food', class: 'add-food-btn' %>
     </p>
