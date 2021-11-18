@@ -8,11 +8,17 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.where(id: params[:id]).includes(:recipe_foods).take
+  end
+
+  def update
     @recipe = Recipe.find(params[:id])
+    # @recipe.toggle!(:public)
+    @recipe.update(params.require(:recipe).permit(:public))
   end
 
   def public_recipes
-    @recipes = Recipe.where({ public: true }).order(created_at: :desc)
+    @recipes = Recipe.where({ public: true }).order(created_at: :desc).includes(:user)
   end
 
   def create

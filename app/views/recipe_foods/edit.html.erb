@@ -1,5 +1,5 @@
- <div class = add-food-form>
- <%= form_with model: [@recipe, @recipe.recipe_foods.build], class: "form" do |f| %>
+ <%# <%= form_with model: @recipe, url: recipe_food_path(@recipe.recipe_foods), method: :patch, class: "form" do |f| %>
+<%= form_with model: @recipe_food, url: recipe_food_path(@recipe_food), method: :patch, local: true do |f| %>
 
   <div class="field">
     <%= f.label :food, class: "label" %>
@@ -15,7 +15,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit class: "button is-success" %>
+    <%= f.submit  "Edit recipe food", class: "button is-success" %>
   </div>
 <% end %>
-</div>

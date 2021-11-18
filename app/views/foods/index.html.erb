@@ -1,4 +1,3 @@
-<h1>FOOD PAGE INDEX</h1>
 <div class = 'food-container'>
   <button class = "add-food-btn btn">
    <%= link_to "Add food", new_food_path, id: "add-food" %>
@@ -14,8 +13,8 @@
       <% @foods.each do |food| %>
         <tr class = 'food-list'>
           <td> <%= food.name %> </td>
-          <td> <%= food.measurmnet_units %> </td>
-          <td> <%= food.price %> $</td>
+          <td> <%= food.measurement_units %> </td>
+          <td> <%= number_to_currency(food.price) %></td>
            <td>
             <button class = 'delete-btn'>
               <%= link_to "Delete",food_path(food.id), method: :delete, data: { confirm: "Are you sure?" } %>

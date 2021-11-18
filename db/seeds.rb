@@ -6,8 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create! :name => 'John Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 
-5.times do |i|
-  Recipe.create!(name: "Recipe ##{i}", preparation_time: "#{i} mins", cooking_time: "#{i} hrs", description: "Description of recipe ##{i}", public: false, user_id: user.id)
-end
+admin = User.create(name: 'Admin', email: 'admin@mail.com', password: "123456")
