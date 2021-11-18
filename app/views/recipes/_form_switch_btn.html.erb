@@ -1,10 +1,10 @@
-<%= form_with model: [@recipe] do |form| %>
+<%= form_with model: @recipe, url: recipe_path(@recipe), method: :patch, local: true do |f| %>
  <div class="custom-control custom-switch">
- <%= form.check_box :public, class: "custom-control-input", id: "customSwitch1"%>
+ <%= f.check_box :public, class: "custom-control-input", id: "customSwitch1", :onclick => f.submit()%>
 
    <label class="custom-control-label" for="customSwitch1">Public</label>
  </div>
  <div class="actions">
-     <%= form.submit %>
+     <%= f.submit %>
  </div>
 <% end %>
