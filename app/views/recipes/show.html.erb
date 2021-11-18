@@ -11,10 +11,11 @@
       <p><%= @recipe.description %></p>
     </div>
     <div class="recipe-info flex-col">
+    <% if can? :update, @recipe%>
       <%= render "form_switch_btn"%>
+<% end%>
     </div>
   </div>
-
   <div class="recipe-actions">
     <%= link_to 'Generate shopping list', general_shopping_list_path(id: @recipe), class: "btn" %>
     <% if can? :update, @recipe %>

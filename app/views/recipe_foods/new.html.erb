@@ -1,3 +1,4 @@
+ <div class = add-food-form>
  <%= form_with model: [@recipe, @recipe.recipe_foods.build], class: "form" do |f| %>
 
   <div class="field">
@@ -17,3 +18,4 @@
     <%= f.submit class: "button is-success" %>
   </div>
 <% end %>
+</div>
