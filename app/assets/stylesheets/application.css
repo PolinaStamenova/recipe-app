@@ -113,3 +113,15 @@ ul {
 .remove-recipe-btn {
   padding: 0.2rem 0.5rem;
 }
+
+.recipe-ingredients {
+  display: flex;
+  gap: 1rem;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
