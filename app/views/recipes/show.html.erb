@@ -44,7 +44,7 @@
             <td><%= number_to_currency(food.food.price*food.quantity)%></td>
             <td class = "recipe-food-buttons">
               <% if can? :update,  @recipe %>
-                <%= link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id)%>
+                <%= link_to "Modify", edit_recipe_food_path(food)%>
                 <%= link_to "Remove", recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), method: :delete, data: { confirm: "Are you sure you want to remove the food?" } %>
               <% end %>
             </td>

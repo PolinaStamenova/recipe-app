@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root 'foods#index'
   resources :foods, only: [:index, :create, :destroy, :new]
 
-  resources :recipe_foods, only: [:update]
+  resources :recipe_foods, only: [:update, :edit]
 
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-    resources :recipe_foods, only: [:new, :create, :destroy, :edit, :update]
+    resources :recipe_foods, only: [:new, :create, :destroy]
   end
 
 

@@ -5,9 +5,8 @@ class RecipeFoodsController < ApplicationController
   end
 
   def edit
-    # binding.pry
-    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.find(params[:id])
+    render 'edit'
   end
 
   def create
@@ -22,16 +21,13 @@ class RecipeFoodsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    # @recipe = Recipe.find(params[:recipe_id])
-    # @recipe_food = RecipeFood.find(params[:food_id])
-
-    # @recipe_food.food.update(name: params[:recipe_food][:name])
-
-    if @recipe_food.update(recipe_food_params)
-      flash[:notice] = 'Food was successfully updated!'
-      redirect_to root_path
-    end
+    @recipe_food = RecipeFood.find(params[:id])
+    flash[:notice] = if @recipe_food.update(params.require(:recipe_food).permit(:food_id, :quantity))
+                       'Food was successfully updated!'
+                     else
+                       'Food was not successfully updated!'
+                     end
+    redirect_to recipe_path(id: @recipe_food.recipe_id)
   end
 
   def destroy
