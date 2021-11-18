@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
+
   root 'foods#index'
   resources :foods, only: [:index, :create, :destroy, :new]
 
@@ -12,6 +13,6 @@ Rails.application.routes.draw do
 
 
   get 'public_recipes', to: 'recipes#public_recipes'
-  get 'generate_shopping_list', to: 'recipes#generate_shopping_list'
+  get 'general_shopping_list', to: 'general_shopping_lists#index', as: 'general_shopping_list'
 
 end

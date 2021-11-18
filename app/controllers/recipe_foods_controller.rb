@@ -13,11 +13,11 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_foods = @recipe.recipe_foods.create(recipe_foods_params)
-    if @recipe_foods.save
-      flash[:notice] = 'Recipe food successfully added!'
-    else
-      flash[:notice] = 'Food was not added!'
-    end
+    flash[:notice] = if @recipe_foods.save
+                       'Recipe food successfully added!'
+                     else
+                       'Food was not added!'
+                     end
     redirect_to @recipe
   end
 
