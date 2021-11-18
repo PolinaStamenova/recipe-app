@@ -125,3 +125,10 @@ tr {
   gap: 0.5rem;
   justify-content: flex-start;
 }
+
+.sign-forms {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
