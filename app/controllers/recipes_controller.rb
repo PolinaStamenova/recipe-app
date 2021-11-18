@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    # @recipe.toggle!(:public)
     @recipe.update(params.require(:recipe).permit(:public))
   end
 
