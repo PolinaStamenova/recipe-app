@@ -20,12 +20,13 @@ class RecipeFoodsController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find(params[:recipe_id])
-    @recipe_food = RecipeFood.find(params[:id])
-    @recipe_food.food.update(name: params[:recipe_food][:name])
+    # binding.pry
+    # @recipe = Recipe.find(params[:id])
+    # @recipe_food = RecipeFood.find(params[:id])
+    # @recipe_food.food.update(name: params[:recipe_food][:name])
 
     flash[:notice] = 'Food was successfully updated!'
-    redirect_to @recipe
+    redirect_to root_path
   end
 
   def destroy
