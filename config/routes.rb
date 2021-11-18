@@ -1,3 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+
+  root 'foods#index'
+  resources :foods, only: [:index, :create, :destroy, :new]
+
+  resources :recipe_foods, only: [:update, :edit]
+
+  resources :recipes, only: [:index, :show, :new, :create, :destroy, :update] do
+    resources :recipe_foods, only: [:new, :create, :destroy]
+  end
+
+
+  get 'public_recipes', to: 'recipes#public_recipes'
+  get 'general_shopping_list', to: 'general_shopping_lists#index', as: 'general_shopping_list'
+
 end
