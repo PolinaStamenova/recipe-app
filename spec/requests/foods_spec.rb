@@ -19,7 +19,7 @@ RSpec.describe 'Foods', type: :request do
     end
 
     it 'should include correct placeholder' do
-      expect(response.body).to include('Find me in app/views/foods/index.html.erb')
+      expect(response.body).to include('Measurment unit')
     end
   end
 end

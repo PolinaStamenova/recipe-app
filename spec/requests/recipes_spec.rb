@@ -20,7 +20,7 @@ RSpec.describe 'Recipes', type: :request do
     end
 
     it 'should include correct placeholder' do
-      expect(response.body).to include('Find me in app/views/recipes/index.html.erb')
+      expect(response.body).to include('Create a recipe')
     end
   end
 end

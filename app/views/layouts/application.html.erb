@@ -31,9 +31,11 @@
           <% end %>
         </div>
       </div>
-      <div class = "nav-bottom">
-        <%= render partial: 'shared/navigation'%>
-      </div>
+      <% if user_signed_in? %>
+        <div class = "nav-bottom">
+          <%= render partial: 'shared/navigation'%>
+        </div>
+      <% end %>
     </header>
     <%= yield %>
   </body>
