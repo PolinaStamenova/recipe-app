@@ -11,13 +11,16 @@ class RecipesController < ApplicationController
     @recipe = Recipe.where(id: params[:id]).includes(:recipe_foods).take
   end
 
+  def update
+
+  end
+
   def public_recipes
     @recipes = Recipe.where({ public: true }).order(created_at: :desc).includes(:user)
   end
 
   def generate_shopping_list
-    @recipe = Recipe.find(id: params[:id])
-    binding.pry
+    @recipe = Recipe.find(params[:id])
   end
 
   def create

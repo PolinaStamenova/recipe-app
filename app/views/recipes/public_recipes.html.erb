@@ -6,9 +6,7 @@
     </div>
     <div class="recipe-public-right flex-col">
       <p>Total food items: <%= recipe.recipe_foods.size%></p>
-      <p>Total price: <%= sum_of_food_price(recipe.recipe_foods)%></p>
-
-
+      <p>Total price: <%= number_to_currency(recipe.total_price)%></p>
     </div>
   </div>
 <% end %>
