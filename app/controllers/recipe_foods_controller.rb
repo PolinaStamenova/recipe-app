@@ -22,7 +22,7 @@ class RecipeFoodsController < ApplicationController
 
   def update
     @recipe_food = RecipeFood.find(params[:id])
-    flash[:notice] = if @recipe_food.update(params.require(:recipe_food).permit(:food_id, :quantity))
+    flash[:notice] = if @recipe_food.update(recipe_foods_params)
                        'Food was successfully updated!'
                      else
                        'Food was not successfully updated!'

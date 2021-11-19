@@ -3,12 +3,7 @@
 <h3>SHOPPING LIST</h3>
   <div class = "shopping-wrapper">
     <p>Amount of food to buy: <%= @recipe.recipe_foods.size%></p>
-      <% array = []%>
-      <% @recipe.recipe_foods.each do |recipe_food|%>
-        <% @single = recipe_food.quantity*recipe_food.food.price %>
-        <% array << @single %>
-      <% end %>
-      <p>Total value of food needed: <%= number_to_currency(array.sum)%></p>
+    <p>Total value of food needed: <%= number_to_currency(@total)%></p>
   </div>
 
   <table class="recipe-ingredients shopping">
